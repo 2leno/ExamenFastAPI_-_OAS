@@ -1,0 +1,14 @@
+[
+    {
+        "author": "Marie Curie Modifi\u00e9e",
+        "title": "D\u00e9couverte scientifique",
+        "content": "Nouveaux r\u00e9sultats",
+        "creation_datetime": "2025-07-31T18:00:00"
+    },
+    {
+        "author": "Nouvel auteur",
+        "title": "Test",
+        "content": "Nouveau contenu",
+        "creation_datetime": "2025-07-31 00:00:00"
+    }
+]
