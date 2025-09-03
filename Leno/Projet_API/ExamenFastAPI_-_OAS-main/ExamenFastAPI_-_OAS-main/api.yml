@@ -62,7 +62,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Post"
+              $ref: "phones.yml"
       responses:
         "200":
           description: Article mis à jour ou créé
@@ -71,10 +71,10 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/Post"
+                  $ref: "phones.yml"
         "422":
           description: Erreur de validation des données
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPError"
+                $ref: "phones.yml"
