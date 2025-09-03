@@ -1,0 +1,80 @@
+openapi: 3.0.0
+info:
+  title: API Example
+  version: 1.0.0
+
+paths:
+  /health:
+    get:
+      summary: Attente de texte brute comme "ok"
+      responses:
+        "200":
+          description: Réponse ok en texte brute
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "ok"
+
+  /phones:
+    get:
+      summary: Récupère la liste des caractéristiques des phones
+      responses:
+        "200":
+          description: Récupération de la liste des caractéristiques de chaque marque
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "phones.yml"
+
+    post:
+      summary: Création d'une nouvelle marque
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "phones.yml"
+      responses:
+        "201":
+          description: Articles créés avec succès
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "phones.yml"
+        "400":
+          description: Erreur de traitement
+          content:
+            application/json:
+              schema:
+                $ref: "phones.yml"
+
+    put:
+      summary: Met à jour un article existant ou en crée un nouveau
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Post"
+      responses:
+        "200":
+          description: Article mis à jour ou créé
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Post"
+        "422":
+          description: Erreur de validation des données
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HTTPError"
